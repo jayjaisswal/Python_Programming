@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Love Calculator</h1>
+    <p>The Love Calculator is calculating your score...</p>
+    <form id="loveCalculatorForm">
+        <label for="name1">Your Name:</label>
+        <input type="text" id="name1" name="name1" required><br><br>
+        <label for="name2">Their Name:</label>
+        <input type="text" id="name2" name="name2" required><br><br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result" style="display: none;">
+        <p id="resultText"></p>
+    </div>
+
+    <script>
+        document.getElementById('loveCalculatorForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var name1 = document.getElementById('name1').value.toLowerCase();
+            var name2 = document.getElementById('name2').value.toLowerCase();
+            var combinedNames = name1 + name2;
+
+            var t = combinedNames.split('t').length - 1;
+            var r = combinedNames.split('r').length - 1;
+            var u = combinedNames.split('u').length - 1;
+            var e = combinedNames.split('e').length - 1;
+            var firstDigit = t + r + u + e;
+
+            var l = combinedNames.split('l').length - 1;
+            var o = combinedNames.split('o').length - 1;
+            var v = combinedNames.split('v').length - 1;
+            var secondDigit = l + o + v + e;
+
+            var score = parseInt(firstDigit.toString() + secondDigit.toString());
+
+            var resultElement = document.getElementById('resultText');
+            var resultDiv = document.getElementById('result');
+
+            if (score >= 80) {
+                resultElement.textContent = "Your score is " + score + ", you can go like coke and mentos.";
+            } else if (score >= 40 && score <= 79) {
+                resultElement.textContent = "Your score is " + score + ", you can do alright together.";
+            } else {
+                resultElement.textContent = "Your score is " + score + ", Find Someone better!!!";
+            }
+
+            resultDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Island</title>
+    <style>
+        
+
+        
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Treasure Island</h1>
+        <p>Your mission is to find the treasure.</p>
+        <pre>
+
+            _________________________________________________________
+
+         ///////
+        || _  _|
+        |/ .  .|
+        (-   `\|      
+         |  `-'|
+    ____/   -  |___
+   /  `\  .___/ |  \\
+  |    `\      /'   |
+  |   |  `\___/'  | |
+_________________________________________________________                                               
+                    ,----------------.
+            /////// |Wh...Whats THAT?|    /`., ,
+           || _  _| | Paisa !        |   /'/''<
+           |/(O)(O) `-/--------------'_.'   /_'\.
+           (-   `\|  /               (_ oOo __) |
+            | _`-'| /                  `\:/'    `\\
+       ____/ (___)|___                  /`       |____
+      /  `\  .___/ |  \                /'\_______/ _  `\\
+     /    `\      /'   \______ ____   |  |         |    |
+    /   /   `\___/'  |        |  __)  |  |         |    |      
+                
+                  |                   |                  |                     |
+             _________|________________.=""_;=.______________|_____________________|_______
+            |                   |  ,-"_,=""     `"=.|                  |
+            |___________________|__"=._o`"-._        `"=.______________|___________________
+                  |                `"=._o`"=._      _`"=._                     |
+             _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+            |                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+            |___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+                  |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+             _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+            ____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+            /______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+            ____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+            /______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+            ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+            /______/______/______/______/______/______/______/______/______/______/_____ /
+            *******************************************************************************
+        </pre>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <script>
+        function startGame() {
+            var direction = prompt("You're at a crossroad. Where do you want to go? Type 'left' or 'right'").toLowerCase();
+
+            if (direction === "left") {
+                var destn = prompt("You've come to a lake. There is an island in the middle of the lake. Type 'wait' to wait for a boat or 'swim' to swim across.").toLowerCase();
+                if (destn === "wait") {
+                    var door = prompt("You arrived at the island unharmed. There is a house with 3 doors. One red, one yellow, and one blue. Which color do you choose?").toLowerCase();
+                    if (door === "red") {
+                        alert("It's a room full of fire. Game Over.");
+                    } else if (door === "blue") {
+                        alert("You enter a room of beasts. Game over.");
+                    } else if (door === "yellow") {
+                        alert("Congratulations! You found the treasure! You Win!");
+                    } else {
+                        alert("You choose the wrong door! Game Over.");
+                    }
+                } else {
+                    alert("You got attacked by an angry trout. Game over.");
+                }
+            } else {
+                alert("You fell into a hole. Game Over.");
+            }
+        }
+    </script>
+</body>
+</html>

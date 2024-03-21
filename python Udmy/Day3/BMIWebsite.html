@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>BMI Calculator</h2>
+        <form id="bmiForm">
+            <label for="height">Height (m):</label>
+            <input type="number" step="0.01" id="height" required>
+            <br>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" step="0.01" id="weight" required>
+            <br>
+            <button type="submit">Calculate BMI</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("bmiForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var height = parseFloat(document.getElementById("height").value);
+            var weight = parseFloat(document.getElementById("weight").value);
+            var bmi = weight / (height * height);
+            var resultElement = document.getElementById("result");
+
+            if (bmi < 18.5) {
+                resultElement.textContent = `Your BMI is ${bmi.toFixed(2)}, you are underweight`;
+            } else if (bmi < 25) {
+                resultElement.textContent = `Your BMI is ${bmi.toFixed(2)}, you have a normal weight`;
+            } else if (bmi < 30) {
+                resultElement.textContent = `Your BMI is ${bmi.toFixed(2)}, you are slightly overweight`;
+            } else if (bmi < 35) {
+                resultElement.textContent = `Your BMI is ${bmi.toFixed(2)}, you are obese`;
+            } else {
+                resultElement.textContent = `Your BMI is ${bmi.toFixed(2)}, you are clinically obese`;
+            }
+        });
+    </script>
+</body>
+</html>
