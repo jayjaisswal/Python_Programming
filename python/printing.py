@@ -1,0 +1,20 @@
+print("hello")
+print('world')                   #i want to print hello and world in same line...?
+print("************************")
+print("hello 'dear' zindagi" )
+print('hello "dear" zindagi' )     
+print("hello \"dear\" zindagi")
+print("i\'m jay")
+print("this is backslash \\")
+print("this is double backslash \\\\")
+print("hell\blo")
+#o/p (line A \n line B)
+print("line A \\n line B")
+#o/p (line A \t line B)
+print("Line A \\t Line B")
+#o/p ("\\\" \\\' ")
+print("\"\\\\\\\"  \\\\\\\' \"" )
+print("this is \\\\ double backslash")
+# o/p these are /\\/\\/\\/\\ mountains
+print("thses are /\\\\/\\\\/\\\\/\\\\ mountains")
+print(r"line A /n line B")                                #use of r
