@@ -15,14 +15,17 @@ user_letter = int(input("How many letters would you like in your Password\n"))
 user_symbol = int(input(f"How many sybmols would you like?\n"))
 user_number = int(input(f"How many Numbers would you like?\n"))
 
+
 #Easy level
 # ghfh%$23 all are in order
 
 # password = ""
 # for char in range(1, user_letter + 1):
 #     password += random.choice(letter)  #random.choice() is a fun
+
 # for char in range(1, user_symbol + 1):
 #     password += random.choice(symbol)
+
 # for char in range(1, user_number + 1):
 #     password += random.choice(number)
  
@@ -31,5 +34,24 @@ user_number = int(input(f"How many Numbers would you like?\n"))
 
 #hard level
 # 2%gh$fg3 all are unordered
+
+password = ""
+password_lst = []
+for char in range(1, user_letter + 1):
+    password_lst += random.choice(letter)  #random.choice() is a fun
+    
+for char in range(1, user_symbol + 1):
+    password_lst += random.choice(symbol)  #password_list.append( random.choice(symbol))
+    
+for char in range(1, user_number + 1):
+    password_lst += random.choice(number)
+ 
+
+random.shuffle(password_lst)
+
+
+for char in password_lst:
+    password += char
+print(f"Your password is : {password}")
 
 
